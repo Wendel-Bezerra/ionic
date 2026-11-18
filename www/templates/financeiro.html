@@ -1,0 +1,29 @@
+<ion-view view-title="Financeiro">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">Semestre letivo</div>
+        <select ng-model="filtro.semestre" ng-options="semestre for semestre in semestres"></select>
+      </label>
+
+      <div class="item" ng-repeat="mensalidade in mensalidades | filter:{semestre: filtro.semestre}:true">
+        <h2>{{mensalidade.mes}}</h2>
+        <p>Vencimento: {{mensalidade.vencimento | date:'dd/MM/yyyy'}}</p>
+        <p>Valor: {{mensalidade.valor | currency:'R$ '}}</p>
+        <p>
+          <span class="etiqueta"
+                ng-class="{'etiqueta-paga': mensalidade.status === 'Paga', 'etiqueta-a-pagar': mensalidade.status === 'A Pagar'}">
+            {{mensalidade.status}}
+          </span>
+        </p>
+
+        <button class="button button-small button-ucsal"
+                ng-if="mensalidade.status === 'A Pagar'"
+                ng-click="copiarCodigo(mensalidade)">
+          Copiar Código de Barras
+        </button>
+        <p class="mensagem-sucesso" ng-show="copiada === mensalidade">Código copiado!</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
