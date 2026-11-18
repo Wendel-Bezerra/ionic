@@ -1,0 +1,31 @@
+<ion-view view-title="Notícias e Eventos">
+  <ion-content>
+    <div class="list">
+      <label class="item item-input item-select">
+        <div class="input-label">Categoria</div>
+        <select ng-model="filtro.categoria">
+          <option value="">Todas</option>
+          <option ng-repeat="categoria in categorias" value="{{categoria}}">{{categoria}}</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="list card" ng-repeat="publicacao in publicacoes | filter:{categoria: filtro.categoria}">
+      <div class="item">
+        <h2>{{publicacao.titulo}}</h2>
+        <p>
+          {{publicacao.data | date:'dd/MM/yyyy'}} -
+          <span class="etiqueta"
+                ng-class="{'etiqueta-noticia': publicacao.categoria === 'Notícia', 'etiqueta-evento': publicacao.categoria === 'Evento'}">
+            {{publicacao.categoria}}
+          </span>
+        </p>
+      </div>
+      <div class="item item-body">
+        <img class="full-image" ng-src="{{publicacao.imagem}}" alt="Imagem ilustrativa">
+        <p>{{publicacao.resumo}}</p>
+        <button class="button button-small button-ucsal" ng-click="abrirDetalhe(publicacao)">Ler mais</button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

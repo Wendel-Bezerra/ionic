@@ -1,0 +1,11 @@
+<ion-view view-title="{{publicacao.categoria}}">
+  <ion-content class="padding">
+    <div ng-if="publicacao">
+      <h3>{{publicacao.titulo}}</h3>
+      <p>{{publicacao.data | date:'dd/MM/yyyy'}} - {{publicacao.categoria}}</p>
+      <img class="full-image" ng-src="{{publicacao.imagem}}" alt="Imagem ilustrativa">
+      <p>{{publicacao.conteudo}}</p>
+    </div>
+    <p class="mensagem-erro" ng-if="!publicacao">Publicação não encontrada.</p>
+  </ion-content>
+</ion-view>
