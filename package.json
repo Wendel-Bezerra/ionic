@@ -1,0 +1,9 @@
+{
+  "name": "ucsal-app",
+  "version": "1.0.0",
+  "description": "Portal do Aluno UCSal - MVP front-end em Ionic Framework + AngularJS",
+  "private": true,
+  "scripts": {
+    "start": "npx http-server www -p 8100 -c-1 -o"
+  }
+}
