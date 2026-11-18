@@ -1,0 +1,51 @@
+/* Cores institucionais da UCSal */
+:root {
+  --ucsal-azul-marinho: #0b2a5b;
+  --ucsal-azul-claro: #3fa9f5;
+  --ucsal-branco: #ffffff;
+  --cor-paga: #33a853;
+  --cor-a-pagar: #f29900;
+  --cor-erro: #d93025;
+}
+
+/* Barras de título */
+.bar.bar-ucsal {
+  background-color: var(--ucsal-azul-marinho);
+  border-color: var(--ucsal-azul-marinho);
+  background-image: none;
+  color: var(--ucsal-branco);
+}
+
+.bar.bar-ucsal .title,
+.bar.bar-ucsal .button {
+  color: var(--ucsal-branco);
+}
+
+/* Botão principal */
+.button.button-ucsal {
+  background-color: var(--ucsal-azul-claro);
+  border-color: var(--ucsal-azul-claro);
+  color: var(--ucsal-branco);
+}
+
+.item-divider {
+  color: var(--ucsal-azul-marinho);
+}
+
+/* Etiquetas (badges) de categoria e status */
+.etiqueta {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: var(--ucsal-branco);
+  font-size: 12px;
+}
+
+.etiqueta-noticia { background-color: var(--ucsal-azul-marinho); }
+.etiqueta-evento { background-color: var(--ucsal-azul-claro); }
+.etiqueta-paga { background-color: var(--cor-paga); }
+.etiqueta-a-pagar { background-color: var(--cor-a-pagar); }
+
+/* Mensagens de retorno */
+.mensagem-erro { color: var(--cor-erro); }
+.mensagem-sucesso { color: var(--cor-paga); }
